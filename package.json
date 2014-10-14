@@ -1,0 +1,17 @@
+{
+  "name": "monday-tabletop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "express": "^4.9.7",
+    "serve-static": "^1.6.4",
+    "socket.io": "^1.1.0"
+  }
+}

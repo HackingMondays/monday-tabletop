@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Toto</h1>
+
+<div id="container">
+
+</div>
+<form onsubmit="return sendMessage()">
+    <input type="text" id="message"/>
+    <button type="submit">Send !</button>
+</form>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    var container = document.getElementById('container');
+    var message = document.getElementById('message');
+    socket.on('chat beau', function (message) {
+        console.log(message);
+        var div = document.createElement('div');
+        div.innerHTML = message;
+        container.appendChild(div);
+    });
+    function sendMessage() {
+        socket.emit('chat laid', message.value);
+        message.value = '';
+
+        // prevent browser actions
+        return false;
+    }
+</script>
+</body>
+</html>
